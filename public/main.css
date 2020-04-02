@@ -3,11 +3,12 @@
 }
 
 .background {
-  background-image: url("/bg.jpg");
+  background-image: url("/HLAbg.png");
+  background-color: black;
 }
 
 .indexContainer {
-  background-image: url("/homeBg.jpg");
+  background-image: url("/HLAbg.png");
   background-size: cover;
   min-height: 600px;
 }
