@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
+db.getCards()
+.then(id => console.log(id))
 
 router.get("/", (req, res) => {
   res.render("index", { hi: "Hello World!" });
@@ -19,3 +21,4 @@ router.get("/results", (req, res) => {
 });
 
 module.exports = router;
+

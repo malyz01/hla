@@ -6,20 +6,24 @@ module.exports = {
   getCards,
   reshuffle,
   addCards,
-  getWinner,
-  getRandomNumber
+  // getWinner,
+  getRandomNumber,
+  getCard,
 };
 
 function getCards() {
-  var cardArr = [];
-  for (i = 0; i < 3; i++) {
-    var id = getRandomNumber();
-    db(card_deck)
-      .where("id", id)
-      .select()
-      .then(card => cardArr.push(card));
-  }
-  return cardArr;
+    var cardsPicked = []
+    for (i = 0; i < 3; i++) {
+    cardsPicked.push(getRandomNumber())
+    }
+    console.log(cardsPicked)
+  } 
+  
+ 
+function getCard(id) {
+  return db('card_deck')
+  .where('id', id)
+  .select()
 }
 
 //same as getCards 
@@ -42,7 +46,7 @@ return sum
 }
  
 
-function getWinner()
+// function getWinner()
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 11);
