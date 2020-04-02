@@ -1,6 +1,7 @@
 .mainContainer {
   padding: 5rem 0 2rem;
   background-color: black;
+
   color: white;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -12,8 +13,10 @@
 
 .indexContainer {
   background-image: url("/homebg.jpeg");
+
   background-size: cover;
   min-height: 600px;
+
 }
 
 .subContainer {
