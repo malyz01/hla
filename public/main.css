@@ -1,9 +1,11 @@
 .mainContainer {
   padding: 5rem 0 2rem;
+  background-color: black;
+  color:white;
 }
 
 .background {
-  background-image: url("/HLAbg.png");
+  background-image: url("/bg.jpg");
   background-color: black;
 }
 
@@ -11,6 +13,7 @@
   background-image: url("/HLAbg.png");
   background-size: cover;
   min-height: 600px;
+
 }
 
 .subContainer {
