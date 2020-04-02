@@ -1,16 +1,23 @@
-# Boilerplate: Phase 1
+# MVP
 
-Phase 1 boilerplate project with:
+- Create express server
+- Use Handle-Bars
+- Use proper routes
+- Use SQL Database
+- Display data from database
+- Use functions for logic
 
- - Express
- - Express Handlebars
- - Jest
- - Nodemon
+# Stretch
 
+- Databse:
+- Handle-Bars: animations
+- Handle-Bars: Display player name
+- Handle-Bars: Confirmation Modals
 
-## Install
+# Roles
 
-```
-npm install
-npm start
-```
+- Tom -> Database / Handle-Bars
+- Stan -> Routes / Design
+- John -> Logic / Test
+- Mathias -> Logic / Test
+- Matthew -> Handle-Bars / Design / Git Management
