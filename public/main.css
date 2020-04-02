@@ -1,0 +1,31 @@
+.mainContainer {
+  padding: 5rem 0 2rem;
+}
+
+.background {
+  background-image: url("/bg.jpg");
+}
+
+.indexContainer {
+  background-image: url("/homeBg.jpg");
+  background-size: cover;
+  min-height: 600px;
+}
+
+.subContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  min-height: 500px;
+  border-radius: 15px;
+  border: 0.5px solid white;
+  color: white;
+}
+
+.resultsContainer {
+  min-height: 500px;
+  color: white;
+}
