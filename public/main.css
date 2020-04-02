@@ -33,3 +33,7 @@
   min-height: 500px;
   color: white;
 }
+
+body {
+  background-color: black;
+}
