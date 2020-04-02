@@ -8,22 +8,24 @@ module.exports = {
   addCards,
   // getWinner,
   getRandomNumbers,
+  getRandomNumber,
   getCard
 }
 
-//returning array of card values
-function getCards() {
+// returning array of card values
+function getCards () {
   var cardsPicked = []
   var nums = getRandomNumbers()
 
-  for (i = 0; i < 3; i++) {
+  for (var i = 0; i < 3; i++) {
     cardsPicked.push(getCard(nums[i]))
   }
   return Promise.all(cardsPicked)
 }
 
-//returning 1 random not picked card
-function getCard(id, db = database) {
+
+// returning 1 random not picked card
+function getCard (id, db = database) {
   return db('card_deck')
     .where('id', id)
     .select()
@@ -32,45 +34,41 @@ function getCard(id, db = database) {
 }
 
 // same as getCards
-function reshuffle() {
+function reshuffle () {
   db('card_deck')
     .where('id', id)
     .select()
     .first()
 }
 
-function addCards() {
+function addCards () {
   var sum = cardArr.reduce((a, b) => a + b)
   return sum
 }
 
 // function getWinner()
 
-function getRandomNumbers(db = database) {
-  db('card_deck')
+function getRandomNumbers (db = database) {
+  return db('card_deck')
     .select()
     .then(v => {
       var drawn = []
-      // console.log('v object contains', v)
-      for (var i = 0; drawn.length < 0; i++) {
-        let number = getRandomNumber()
-        let checker = v.reduce((a,v) => a !== number ? v.value : a ,0)
-        console.log(checker) 
+      while (drawn.length < 3) {
+        let ran = getRandomNumber()
+        let picked = v.filter(num => num.value === ran)
+        if (!picked.drawn) {
+          drawn.push(ran)
+          db('card_deck')
+            .where('id', picked.id)
+            .update({ drawn: true })
+        }
       }
+      console.log(drawn)
+      return drawn
     })
-      
-      // for (var i = 0; drawn.length < 3; i++) {
-        // v.value 
-      //   if ('check if number has been taken === ') {
-      //     drawn.push()
-      //   }
-      // }
-      // return drawn
-    // })
-
 }
 
 function getRandomNumber () {
-return Math.floor(Math.random() * 21)
+  return Math.floor(Math.random() * 21)
 }
 getRandomNumbers()

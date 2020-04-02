@@ -1,16 +1,19 @@
 .mainContainer {
   padding: 5rem 0 2rem;
   background-color: black;
-  color:white;
+
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .background {
-  background-image: url("/bg.jpg");
-  background-color: black;
+  background-image: url("/gameboardbg.jpeg");
+  background-size: cover;
 }
 
 .indexContainer {
-  background-image: url("/HLAbg.png");
+  background-image: url("/homebg.jpeg");
+
   background-size: cover;
   min-height: 600px;
 
@@ -32,4 +35,8 @@
 .resultsContainer {
   min-height: 500px;
   color: white;
+}
+
+body {
+  background-color: black;
 }
