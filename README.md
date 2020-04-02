@@ -9,4 +9,15 @@
 
 # Stretch
 
--
+- Databse:
+- Handle-Bars: animations
+- Handle-Bars: Display player name
+- Handle-Bars: Confirmation Modals
+
+# Roles
+
+- Tom -> Database / Handle-Bars
+- Stan -> Routes / Design
+- John -> Logic / Test
+- Mathias -> Logic / Test
+- Matthew -> Handle-Bars / Design / Git Management
