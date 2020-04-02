@@ -6,7 +6,8 @@ module.exports = {
   getCards,
   reshuffle,
   addCards,
-  getWinner
+  getWinner,
+  getRandomNumber
 };
 
 function getCards() {
@@ -21,11 +22,27 @@ function getCards() {
   return cardArr;
 }
 
-function reshuffle() {}
+//same as getCards 
+function reshuffle() {
+  var cardArr = [];
+  for (i = 0; i < 3; i++) {
+    var id = getRandomNumber();
+    db(card_deck)
+      .where("id", id)
+      .select()
+      .then(card => cardArr.push(card));
+  }
+  return cardArr;
+}
 
-function addCards() {}
 
-function getWinner() {}
+function addCards() {
+var sum = cardArr.reduce((a, b) => a +b)
+return sum
+}
+ 
+
+function getWinner()
 
 function getRandomNumber() {
   return Math.floor(Math.random() * 11);
