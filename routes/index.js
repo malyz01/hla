@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require("../db");
 
 router.get("/", (req, res) => {
+  db.resetDatabase()
   res.render("index", { hi: "Hello World!" });
 });
 
@@ -29,7 +30,6 @@ router.get("/deal/:id", (req, res) => {
   } else {
     nextPage = '/deal/2'
   }
-
   db.getPlayersData(id).then(player => {
     let viewData = {
       nextPage: nextPage,
@@ -45,13 +45,15 @@ router.get("/deal/:id", (req, res) => {
 });
 
 router.get("/results", (req, res) => {
-  let difference = 5
-  let winner = 'Player 1'
+db.getWinner().then(player => {
+  
   let result = {
-    winner,
-    difference
+    winner: player.name,
+    
   }
   res.render("results", result);
+
+})
 });
 
 module.exports = router;

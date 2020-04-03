@@ -27,7 +27,7 @@ test('check if getRandomNumbers works', () => {
     })
 })
 
-xtest('check if getRandomNumbers updates drawn', () => {
+test('check if getRandomNumbers updates drawn', () => {
   return db.getRandomNumbers(testDb)
     .then(card => {
       expect(card.id).toBe(5)
@@ -35,12 +35,12 @@ xtest('check if getRandomNumbers updates drawn', () => {
     })
 })
 
-xtest('check if get randomnumber function returns a random number', () => {
+test('check if get randomnumber function returns a random number', () => {
   const num = db.getRandomNumber()
   expect(true).toBeTruthy()
 })
 
-test('check if update fucntion works', () => {
+xtest('check if update fucntion works', () => {
   return db.updatePlayer(4, 34, testDb)
   .then(data => {
     console.log(data)

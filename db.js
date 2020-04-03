@@ -12,7 +12,10 @@ module.exports = {
   getCard,
   getPlayersData,
   updatePlayer,
-  updatePicked
+  updatePicked,
+  getWinner,
+  getPlayersTable,
+  resetDatabase
 };
 
 
@@ -92,4 +95,26 @@ function updatePlayer(id, data, db = database) {
       card2: data[1],
       card3: data[2]
     });
+}
+
+function getPlayersTable(db = database) {
+  return db('players')
+  .select()
+}
+
+function getWinner() {
+return getPlayersTable()
+.then(data => {
+ return data.reduce((a,v) => {
+    if(a > v.hand_total) {
+      return a
+    } else {
+      return v
+    }
+  }, 0)
+})
+}
+
+function resetDatabase(db = database) {
+  db.seed.run()
 }
