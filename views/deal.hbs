@@ -15,24 +15,26 @@
 <div class="four column centered row background">
     <div class="column">
         <div class="subContainer cardContainer">
-            <h1>{{card1}}</h1>
+            <h1 class="cardtext">{{card1}}</h1>
         </div>
     </div>
     <div class="column">
         <div class="subContainer cardContainer">
-            <h1>{{card2}}</h1>
+            <h1 class="cardtext">{{card2}}</h1>
         </div>
     </div>
     <div class="column">
         <div class="subContainer cardContainer">
-            <h1>{{card3}}</h1>
+            <h1 class="cardtext">{{card3}}</h1>
         </div>
     </div>
 </div>
 <div class="six column centered row">
     <div class="column">
         <div class="subContainer">
-            <a href="/deal/{{dealId}}" class="fluid ui secondary button massive">Draw Cards</a>
+            <form action="/deal/{{id}}" method="POST">
+                <input class="fluid ui secondary button massive" type="submit" name="delete" value="draw">
+            </form>
         </div>
     </div>
     <div class="column">

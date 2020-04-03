@@ -26,10 +26,19 @@
 }
 
 .cardContainer {
-  min-height: 500px;
+  height: 500px;
+  width: 330px;
   border-radius: 15px;
   border: 0.5px solid white;
   color: white;
+  background-color: blue;
+  background-image: url("/cardbg.png");
+  background-size: cover;
+}
+
+.cardtext {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 200px;
 }
 
 .resultsContainer {
@@ -39,4 +48,25 @@
 
 body {
   background-color: black;
+}
+
+.startButton {
+  height: 70px;
+  width: 200px;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-left: 10px;
+  background-color: rgb(97, 22, 22);
+  font-size: 40px;
+  color: white;
+}
+
+.startButton:hover {
+  background-color: darkred;
+  cursor: pointer;
+  color: grey
+}
+
+.copyright {
+  text-align: center;
 }

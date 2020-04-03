@@ -12,7 +12,7 @@ beforeEach(() => {
   return testDb.seed.run()
 })
 
-test('check if get card is working', () => {
+xtest('check if get card is working', () => {
   return db.getCard(5, testDb)
     .then(card => {
       expect(card.id).toBe(5)
@@ -37,10 +37,12 @@ test('check if getRandomNumbers updates drawn', () => {
 
 test('check if get randomnumber function returns a random number', () => {
   const num = db.getRandomNumber()
-  
   expect(true).toBeTruthy()
 })
 
-// test('check if reshuffle is working' , ()) = > {
-//   return
-// }
+xtest('check if update fucntion works', () => {
+  return db.updatePlayer(4, 34, testDb)
+  .then(data => {
+    console.log(data)
+  })
+})
