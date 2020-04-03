@@ -21,32 +21,33 @@ router.get('/deal/:id', (req, res) => {
   let player = ''
   let dealId = 0
   let total = ''
-  if (id < 3){
-   player = 'Player ' + id
-   dealId = id + 2
-  } else if ( id === 3){
+  let card1 = '?'
+  let card2 = '?'
+  let card3 = '?'
+  let nextPage = ''
+  if (id < 3) {
+    player = 'Player ' + id
+    dealId = id + 2
+  } else if (id === 3) {
     player = 'Player 1'
     dealId = 3
   } else {
     player = 'Player 2'
     dealId = 4
   }
-  let nextPage = ''
   if (id === 3) {
     nextPage = '/deal/' + (id - 1)
   } else {
     nextPage = '/results'
   }
-  let card1 = '?'
-  let card2 = '?'
-  let card3 = '?'
-  if (id === 3 || id === 4) {
-    db.getRandomNumbers()
+  db.getRandomNumbers()
     .then(arr => {
-      card1 = arr[0]
-      card2 = arr[1]
-      card3 = arr[2]
-      total = card1 + card2 + card2
+      if (id === 3 || id === 4) {
+        card1 = arr[0]
+        card2 = arr[1]
+        card3 = arr[2]
+        total = card1 + card2 + card2
+      }
       let viewData = {
         player,
         nextPage,
@@ -57,22 +58,13 @@ router.get('/deal/:id', (req, res) => {
         total
       }
       res.render("deal", viewData)
-    }) 
-  }
-    let viewData = {
-      player,
-      nextPage,
-      card1,
-      card2,
-      card3,
-      dealId,
-      total
-    }
-    res.render("deal", viewData)
+    })
 })
 
+
+
 router.get("/results", (req, res) => {
-    let difference = 5
+  let difference = 5
   let winner = 'Player 1'
   let result = {
     winner,
