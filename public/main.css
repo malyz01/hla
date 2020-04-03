@@ -31,6 +31,7 @@
   border-radius: 15px;
   border: 0.5px solid white;
   color: white;
+  background-color: blue;
   background-image: url("/cardbg.png");
   background-size: cover;
 }
