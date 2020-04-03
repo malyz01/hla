@@ -15,6 +15,7 @@ module.exports = {
   updatePicked
 };
 
+
 // returning array of card values
 function getCards() {
   var cardsPicked = [];
@@ -68,6 +69,7 @@ function updatePicked(id, db = database) {
   return db("card_deck")
     .where("id", id)
     .update({ drawn: true });
+
 }
 
 function getRandomNumber() {

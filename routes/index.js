@@ -1,20 +1,11 @@
 const express = require("express");
 const router = express.Router()
 const db = require("../db");
-// db.getCards()
-// .then(id => console.log(id))
 
 router.get("/", (req, res) => {
   res.render("index", { hi: "Hello World!" });
 });
 
-// router.get("/player1", (req, res) => {
-//   res.render("player1");
-// });
-
-// router.get("/player2", (req, res) => {
-//   res.render("player2");
-// });
 
 router.post("/deal/:id", (req, res) => {
   const id = req.params.id;
@@ -38,6 +29,7 @@ router.get("/deal/:id", (req, res) => {
   } else {
     nextPage = '/deal/2'
   }
+
   db.getPlayersData(id).then(player => {
     let viewData = {
       nextPage: nextPage,
@@ -51,8 +43,6 @@ router.get("/deal/:id", (req, res) => {
     res.render("deal", viewData);
   });
 });
-
-
 
 router.get("/results", (req, res) => {
   let difference = 5
