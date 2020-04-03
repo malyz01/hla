@@ -76,7 +76,7 @@ function updatePicked(id, db = database) {
 }
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * 21);
+  return Math.floor((Math.random() * (21 - 1)) + 1)
 }
 
 function getPlayersData(id, db = database) {
