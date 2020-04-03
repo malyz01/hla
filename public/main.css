@@ -35,6 +35,11 @@
   background-size: cover;
 }
 
+.cardtext {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 200px;
+}
+
 .resultsContainer {
   min-height: 500px;
   color: white;
