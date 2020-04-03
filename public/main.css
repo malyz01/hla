@@ -26,11 +26,14 @@
 }
 
 .cardContainer {
-  min-height: 500px;
+  height: 500px;
+  width: 330px;
   border-radius: 15px;
   border: 0.5px solid white;
   color: white;
   background-color: blue;
+  background-image: url("/cardbg.png");
+  background-size: cover;
 }
 
 .resultsContainer {
