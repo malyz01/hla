@@ -45,7 +45,7 @@ console.log(id)
     card1 = 4
     card2 = 7
     card3 = 8
-    total = card1 + card2 + card2
+    total = card1 + card2 + card3
   }
     // db.dealCards()
     // .then(cards=> {
