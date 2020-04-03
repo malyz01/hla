@@ -57,7 +57,8 @@ router.get('/deal/:id', (req, res) => {
         dealId,
         total
       }
-      res.render("deal", viewData)
+      db.updatePlayer(id, total)
+      res.render('deal', viewData)
     })
 })
 

@@ -10,6 +10,7 @@ module.exports = {
   getRandomNumbers,
   getRandomNumber,
   // getCard
+  updatePlayer
 }
 
 // returning array of card values
@@ -22,7 +23,6 @@ module.exports = {
 //   }
 //   return Promise.all(cardsPicked)
 // }
-
 
 // returning 1 random not picked card
 // function getCard (id, db = database) {
@@ -65,11 +65,18 @@ function getRandomNumbers (db = database) {
       }
       console.log(drawn)
       return drawn
-     })
-    }
+    })
+}
 
 function getRandomNumber () {
   return Math.floor(Math.random() * 21)
 }
 // getRandomNumbers()
 
+function updatePlayer (id, total, db = database) {
+  id = id - 2
+  return db('players')
+  .where('id', id)
+  .select()
+  .update({ hand_total: total })
+}

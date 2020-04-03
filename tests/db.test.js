@@ -20,7 +20,7 @@ xtest('check if get card is working', () => {
     })
 })
 
-test.only('check if getRandomNumbers works', () => {
+test('check if getRandomNumbers works', () => {
   return db.getRandomNumbers(testDb)
     .then(cards => {
       expect(cards.length).toBe(3)
@@ -37,10 +37,12 @@ xtest('check if getRandomNumbers updates drawn', () => {
 
 xtest('check if get randomnumber function returns a random number', () => {
   const num = db.getRandomNumber()
-  
   expect(true).toBeTruthy()
 })
 
-// test('check if reshuffle is working' , ()) = > {
-//   return
-// }
+test('check if update fucntion works', () => {
+  return db.updatePlayer(4, 34, testDb)
+  .then(data => {
+    console.log(data)
+  })
+})
