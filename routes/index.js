@@ -1,6 +1,6 @@
 const express = require("express");
-const router = express.Router();
-// const db = require("../db");
+const router = express.Router()
+const db = require("../db");
 // db.getCards()
 // .then(id => console.log(id))
 
@@ -40,17 +40,25 @@ router.get('/deal/:id', (req, res) => {
   let card1 = '?'
   let card2 = '?'
   let card3 = '?'
-console.log(id)
   if (id === 3 || id === 4) {
-    card1 = 4
-    card2 = 7
-    card3 = 8
-    total = card1 + card2 + card2
+    db.getRandomNumbers()
+    .then(arr => {
+      card1 = arr[0]
+      card2 = arr[1]
+      card3 = arr[2]
+      total = card1 + card2 + card2
+      let viewData = {
+        player,
+        nextPage,
+        card1,
+        card2,
+        card3,
+        dealId,
+        total
+      }
+      res.render("deal", viewData)
+    }) 
   }
-    // db.dealCards()
-    // .then(cards=> {
-
-    // })
     let viewData = {
       player,
       nextPage,
