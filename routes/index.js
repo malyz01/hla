@@ -1,12 +1,11 @@
 const express = require("express");
-const router = express.Router()
+const router = express.Router();
 const db = require("../db");
 
 router.get("/", (req, res) => {
-  db.resetDatabase()
+  db.resetDatabase();
   res.render("index", { hi: "Hello World!" });
 });
-
 
 router.post("/deal/:id", (req, res) => {
   const id = req.params.id;
@@ -24,11 +23,11 @@ router.post("/deal/:id", (req, res) => {
 
 router.get("/deal/:id", (req, res) => {
   const id = Number(req.params.id);
-  let nextPage = ''
+  let nextPage = "";
   if (id === 2) {
-    nextPage = '/results'
+    nextPage = "/results";
   } else {
-    nextPage = '/deal/2'
+    nextPage = "/deal/2";
   }
   db.getPlayersData(id).then(player => {
     let viewData = {
@@ -45,16 +44,12 @@ router.get("/deal/:id", (req, res) => {
 });
 
 router.get("/results", (req, res) => {
-db.getWinner().then(player => {
-  
-  let result = {
-    winner: player.name,
-    
-  }
-  res.render("results", result);
-
-})
+  db.getWinner().then(player => {
+    let result = {
+      winner: player.name
+    };
+    res.render("results", result);
+  });
 });
 
 module.exports = router;
-

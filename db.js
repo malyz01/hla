@@ -18,7 +18,6 @@ module.exports = {
   resetDatabase
 };
 
-
 // returning array of card values
 function getCards() {
   var cardsPicked = [];
@@ -72,11 +71,10 @@ function updatePicked(id, db = database) {
   return db("card_deck")
     .where("id", id)
     .update({ drawn: true });
-
 }
 
 function getRandomNumber() {
-  return Math.floor((Math.random() * (21 - 1)) + 1)
+  return Math.floor(Math.random() * (21 - 1) + 1);
 }
 
 function getPlayersData(id, db = database) {
@@ -98,23 +96,19 @@ function updatePlayer(id, data, db = database) {
 }
 
 function getPlayersTable(db = database) {
-  return db('players')
-  .select()
+  return db("players").select();
 }
 
 function getWinner() {
-return getPlayersTable()
-.then(data => {
- return data.reduce((a,v) => {
-    if(a > v.hand_total) {
-      return a
+  return getPlayersTable().then(data => {
+    if (data[0].hand_total > data[1].hand_total) {
+      return data[0];
     } else {
-      return v
+      return data[1];
     }
-  }, 0)
-})
+  });
 }
 
 function resetDatabase(db = database) {
-  db.seed.run()
+  db.seed.run();
 }
