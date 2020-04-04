@@ -5,6 +5,7 @@
         </div>
     </div>
 </div>
+
 <div class="two column centered row">
     <div class="column">
         <div class="subContainer">
@@ -12,6 +13,7 @@
         </div>
     </div>
 </div>
+
 <div class="four column centered row background">
     <div class="column">
         <div class="subContainer cardContainer">
@@ -29,11 +31,23 @@
         </div>
     </div>
 </div>
+
+{{#if drawStatus}}
+<div class="two column centered row">
+    <div class="column">
+        <div class="subContainer">
+            <h1>You can only draw 2 times</h1>
+        </div>
+    </div>
+</div>
+{{/if}}
+
 <div class="six column centered row">
     <div class="column">
         <div class="subContainer">
-            <form action="/deal/{{id}}" method="POST">
-                <input class="fluid ui secondary button massive" type="submit" name="delete" value="draw">
+            <form style="width: 100%" action="/deal/{{id}}" method="POST">
+                <input {{#if drawStatus}}disabled{{/if}} class="fluid ui grey button massive" type="submit" name="draw"
+                    value="Draw">
             </form>
         </div>
     </div>

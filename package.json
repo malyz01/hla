@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
+    "mg": "npx knex migrate:latest",
+    "rb": "npx knex migrate:rollback",
+    "seed": "npx knex seed:run",
     "test": "jest"
   },
   "repository": {

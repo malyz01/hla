@@ -1,9 +1,8 @@
 .mainContainer {
   padding: 5rem 0 2rem;
   background-color: black;
-
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .background {
@@ -13,10 +12,10 @@
 
 .indexContainer {
   background-image: url("/homebg.jpeg");
-
-  background-size: cover;
-  min-height: 600px;
-
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 800px;
 }
 
 .subContainer {
@@ -31,13 +30,14 @@
   border-radius: 15px;
   border: 0.5px solid white;
   color: white;
+  margin: 0 auto;
   background-color: blue;
   background-image: url("/cardbg.png");
   background-size: cover;
 }
 
 .cardtext {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 200px;
 }
 
@@ -64,7 +64,7 @@ body {
 .startButton:hover {
   background-color: darkred;
   cursor: pointer;
-  color: grey
+  color: grey;
 }
 
 .copyright {
