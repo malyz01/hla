@@ -63,3 +63,5 @@ function getWinner() {
 function resetDatabase(db = database) {
   db.seed.run();
 }
+
+// testing
