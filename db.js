@@ -31,7 +31,7 @@ function updatePicked(id, db = database) {
 }
 
 function getRandomNumber() {
-  return Math.ceil(Math.random() * 21);
+  return Math.ceil(Math.random() * 20);
 }
 
 function getPlayersData(id, db = database) {
