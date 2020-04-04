@@ -40,11 +40,8 @@ router.get("/deal/:id", (req, res) => {
 });
 
 router.get("/results", (req, res) => {
-  db.getWinner().then((player) => {
-    let result = {
-      winner: player.name,
-    };
-    res.render("results", result);
+  db.getWinner().then((winner) => {
+    res.render("results", { winner });
   });
 });
 

@@ -30,7 +30,7 @@ function updatePicked(id, db = database) {
 }
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * (21 - 1) + 1);
+  return Math.ceil(Math.random() * 21);
 }
 
 function getPlayersData(id, db = database) {
@@ -54,12 +54,8 @@ function getPlayersTable(db = database) {
 }
 
 function getWinner() {
-  return getPlayersTable().then((data) => {
-    if (data[0].hand_total > data[1].hand_total) {
-      return data[0];
-    } else {
-      return data[1];
-    }
+  return getPlayersTable().then((x) => {
+    return x.reduce((a, v) => (a.hand_total < v.hand_total ? (a = v) : a)).name;
   });
 }
 
